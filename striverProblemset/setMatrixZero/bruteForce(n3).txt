@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void setZeros(int matrix[][]) {
+        // Write your code here..
+        
+        boolean[][] iszero=new boolean[matrix.length][matrix[0].length];
+        for (int i = 0; i < matrix.length; i++) {
+            
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 0) {
+                    for (int k = 0; k < matrix.length; k++) {
+                        iszero[k][j]=true;
+                    }
+                    for (int l = 0; l < matrix[0].length; l++) {
+                        iszero[i][l]=true;
+                    }
+                   
+                }
+            }
+
+        }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if(iszero[i][j]==true) {
+                    matrix[i][j]=0;
+                }
+            }
+        }
+
+    }
+
+}
